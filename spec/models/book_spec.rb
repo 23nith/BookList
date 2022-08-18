@@ -4,9 +4,13 @@ RSpec.describe Book, type: :model do
   
   context "Association" do
 
-    it "1. should belong to list_item" do
-      t = Book.reflect_on_association(:list_item)
-      expect(t.macro).to eq(:belongs_to)
+    it "1. should have many users" do
+      t = User.reflect_on_association(:users)
+      expect(t.macro).to eq(:has_many)
+    end
+
+    it '2. should have many users through list items' do
+      should respond_to(:users)
     end
 
   end
