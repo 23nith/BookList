@@ -4,8 +4,8 @@ RSpec.describe Book, type: :model do
   
   context "Association" do
 
-    it "1. should have many users" do
-      t = User.reflect_on_association(:users)
+    it "1. should have many list_items" do
+      t = User.reflect_on_association(:list_items)
       expect(t.macro).to eq(:has_many)
     end
 
