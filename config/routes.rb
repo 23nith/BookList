@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'books/index'
+  get 'books/show'
   get '/current_user', to: 'current_user#index'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
