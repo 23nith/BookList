@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-  get 'list_items/reading_list'
-  get 'list_items/finished_books'
-  get 'list_items/show'
-  get 'list_items/create'
-  get 'list_items/update'
-  get 'list_items/destroy'
-  get 'books/index'
-  get 'books/show'
+  
+  get '/reading_list' => 'list_items#reading_list'
+  get '/finished_books' => 'list_items#finished_books'
+  post '/list_item' => 'list_items#show'
+  post '/add_list_item' => 'list_items#create'
+  post '/edit_list_item' => 'list_items#update'
+  delete '/list_item' => 'list_items#destroy'
+
+  get '/books' => 'books#index'
+  post '/book' => 'books#show'
+
+
   get '/current_user', to: 'current_user#index'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
