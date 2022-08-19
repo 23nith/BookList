@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'list_items/reading_list'
+  get 'list_items/finished_books'
+  get 'list_items/show'
+  get 'list_items/create'
+  get 'list_items/update'
+  get 'list_items/destroy'
+  get 'books/index'
+  get 'books/show'
   get '/current_user', to: 'current_user#index'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
