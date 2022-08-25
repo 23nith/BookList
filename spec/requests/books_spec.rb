@@ -32,16 +32,7 @@ RSpec.describe 'Books', type: :request do
     end
 
     let!(:book1) do
-      Book.create!(
-        title: 'Voice of War',
-        author: 'Zack Argyle',
-        cover_image_url: 'https://images-na.ssl-images-amazon.com/images/I/41JodZ5Vl%2BL.jpg',
-        page_count: '',
-        publisher: 'Self Published',
-        synopsis: 'Blah blah blah',
-        created_at: '',
-        updated_at: ''
-      )
+      create(:random_book)
     end
 
     it 'Returns response 200' do
