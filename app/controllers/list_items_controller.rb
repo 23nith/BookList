@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ListItemsController < ApplicationController
-  before_action :set_list_item, only: %i[ show update destroy ]
+  before_action :set_list_item, only: %i[show update destroy]
 
   def reading_list
     @reading_list = ListItem.all.where(user_id: current_user.id).where.not(finish_date: nil)
@@ -36,17 +38,18 @@ class ListItemsController < ApplicationController
   def destroy
     @list_item.destroy
     render json: {
-      status: {code: 200, message: 'Delete successful.'},
+      status: { code: 200, message: 'Delete successful.' }
     }
   end
 
   private
-    def set_list_item
-      @list_item = ListItem.find(params[:id])
-    end
 
-    def list_item_params
-      params.require(:list_item).permit(:id, :book_id, :user_id, :rating, :notes, :start_date, :finish_date, :created_at, :updated_at )
-    end
+  def set_list_item
+    @list_item = ListItem.find(params[:id])
+  end
+
+  def list_item_params
+    params.require(:list_item).permit(:id, :book_id, :user_id, :rating, :notes, :start_date, :finish_date,
+                                      :created_at, :updated_at)
+  end
 end
-

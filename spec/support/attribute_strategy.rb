@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AttributeStrategy
   def initialize
     @strategy = FactoryBot.strategy_by_name(:build).new

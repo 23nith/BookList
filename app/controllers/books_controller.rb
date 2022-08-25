@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show ]
+  before_action :set_book, only: %i[show]
 
   def index
     @list_array = ListItem.all.where(id: current_user.id).pluck(:book_id)
@@ -13,8 +15,8 @@ class BooksController < ApplicationController
   end
 
   private
-    def set_book
-      @book = Book.find(params[:id])
-    end
 
+  def set_book
+    @book = Book.find(params[:id])
+  end
 end
