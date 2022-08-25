@@ -54,16 +54,7 @@ RSpec.describe 'ListItems', type: :request do
     end
 
     let!(:list_item1) do
-      ListItem.create!(
-        book_id: @book.id,
-        user_id: @user.id,
-        rating: 2,
-        notes: 'sample notes',
-        start_date: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        finish_date: 'Sat Jun 11 2022 11:53:50 GMT+0000',
-        created_at: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        updated_at: 'Sat Jun 11 2022 11:53:50 GMT+0000'
-      )
+      create(:list_item, book: @book, user: @user)
     end
 
     it 'Returns response 200' do
@@ -128,16 +119,7 @@ RSpec.describe 'ListItems', type: :request do
     end
 
     let!(:list_item1) do
-      ListItem.create!(
-        book_id: @book.id,
-        user_id: @user.id,
-        rating: 2,
-        notes: 'sample notes',
-        start_date: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        finish_date: 'Sat Jun 11 2022 11:53:50 GMT+0000',
-        created_at: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        updated_at: 'Sat Jun 11 2022 11:53:50 GMT+0000'
-      )
+      create(:list_item, book: @book, user: @user)
     end
 
     it 'Returns response successful' do
@@ -181,16 +163,7 @@ RSpec.describe 'ListItems', type: :request do
     end
 
     let!(:list_item1) do
-      ListItem.create!(
-        book_id: @book.id,
-        user_id: @user.id,
-        rating: 2,
-        notes: 'sample notes',
-        start_date: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        finish_date: 'Sat Jun 11 2022 11:53:50 GMT+0000',
-        created_at: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        updated_at: 'Sat Jun 11 2022 11:53:50 GMT+0000'
-      )
+      create(:list_item, book: @book, user: @user)
     end
 
     it 'Returns response successful' do
@@ -199,16 +172,7 @@ RSpec.describe 'ListItems', type: :request do
     end
 
     let!(:list_item1) do
-      ListItem.create!(
-        book_id: @book.id,
-        user_id: @user.id,
-        rating: 2,
-        notes: 'sample notes',
-        start_date: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        finish_date: 'Sat Jun 11 2022 11:53:50 GMT+0000',
-        created_at: 'Fri Jun 10 2022 11:53:50 GMT+0000',
-        updated_at: 'Sat Jun 11 2022 11:53:50 GMT+0000'
-      )
+      create(:list_item, book: @book, user: @user)
     end
 
     it 'Decreases the count of list items' do
