@@ -6,7 +6,7 @@ FactoryBot.define do
     user { nil }
     rating { 1 }
     notes { 'MyText' }
-    start_date { '2022-08-18' }
-    finish_date { '2022-08-18' }
+    start_date { Date.now }
+    finish_date { Date.now }
   end
 end

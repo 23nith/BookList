@@ -50,7 +50,7 @@ RSpec.describe 'ListItems', type: :request do
     before do
       @user = create(:user)
       sign_in @user
-      @book = create(:book)
+      @book = create(:random_book)
     end
 
     let!(:list_item1) do
@@ -83,7 +83,7 @@ RSpec.describe 'ListItems', type: :request do
     before do
       @user = create(:user)
       sign_in @user
-      @book = create(:book)
+      @book = create(:random_book)
     end
 
     it 'Returns response successful' do
@@ -124,7 +124,7 @@ RSpec.describe 'ListItems', type: :request do
     before do
       @user = create(:user)
       sign_in @user
-      @book = create(:book)
+      @book = create(:random_book)
     end
 
     let!(:list_item1) do
@@ -177,7 +177,7 @@ RSpec.describe 'ListItems', type: :request do
     before do
       @user = create(:user)
       sign_in @user
-      @book = create(:book)
+      @book = create(:random_book)
     end
 
     let!(:list_item1) do

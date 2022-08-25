@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'faker'
 
 RSpec.describe 'Books', type: :request do
   describe 'GET /books' do
     before do
-      @user = create(:user)
+      @user = create(:random_user)
       sign_in @user
     end
 
@@ -26,7 +27,7 @@ RSpec.describe 'Books', type: :request do
   # Show book
   describe 'POST /book' do
     before do
-      @user = create(:user)
+      @user = create(:random_user)
       sign_in @user
     end
 
