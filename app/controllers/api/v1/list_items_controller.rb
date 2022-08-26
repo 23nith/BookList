@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ListItemsController < ApplicationController
+class Api::V1::ListItemsController < ApplicationController
   before_action :set_list_item, only: %i[show update destroy]
 
   def reading_list
@@ -17,11 +17,16 @@ class ListItemsController < ApplicationController
     render json: @list_item
   end
 
+  # def add_list_item
   def create
     @list_item = ListItem.new(list_item_params)
 
     if @list_item.save
-      render json: @list_item, status: :created, location: @list_item
+      render json: @list_item, status: :created
+      # render json: {
+      #   status: { code: 200, message: 'Delete successful.' }
+      # }
+    #   render json: @list_item, status: :created, location: @list_item
     else
       render json: @list_item.errors, status: :unprocessable_entity
     end
