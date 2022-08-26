@@ -14,7 +14,7 @@ module Users
         }
       else
         render json: {
-          status: { message: "User couldn't be created successfully. #{resource.errors.full_messages.to_sentence}" }
+          errors: resource.errors
         }, status: :unprocessable_entity
       end
     end
