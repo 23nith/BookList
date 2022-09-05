@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       delete '/list_item' => 'list_items#destroy'
 
       get '/books' => 'books#index'
-    # post '/book' => 'books#show'
+      post '/book' => 'books#show'
       get '/current_user', to: 'current_user#index'
     end
   end
