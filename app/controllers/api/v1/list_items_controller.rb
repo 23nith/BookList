@@ -4,12 +4,12 @@ class Api::V1::ListItemsController < ApplicationController
   before_action :set_list_item, only: %i[show update destroy]
 
   def reading_list
-    @reading_list = ListItem.all.where(user_id: current_user.id).where.not(finish_date: nil)
+    @reading_list = ListItem.all.where(user_id: current_user.id, finish_date: nil)
     render json: @reading_list
   end
 
   def finished_books
-    @finished_books = ListItem.all.where(user_id: current_user.id, finish_date: nil)
+    @finished_books = ListItem.all.where(user_id: current_user.id).where.not(finish_date: nil)
     render json: @finished_books
   end
 

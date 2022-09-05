@@ -21,7 +21,7 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :author, presence: true
   validates :cover_image_url, presence: true
-  validates :page_count, presence: true, numericality: true
+  # validates :page_count, presence: true, numericality: true
   validates :publisher, presence: true
   validates :synopsis, presence: true
 end
