@@ -5,12 +5,12 @@ class Api::V1::ListItemsController < ApplicationController
 
   def reading_list
     @reading_list = ListItem.all.where(user_id: current_user.id, finish_date: nil)
-    render json: @reading_list
+    render json: @reading_list.to_json(:include => :book)
   end
 
   def finished_books
     @finished_books = ListItem.all.where(user_id: current_user.id).where.not(finish_date: nil)
-    render json: @finished_books
+    render json: @finished_books.to_json(:include => :book)
   end
 
   def show
