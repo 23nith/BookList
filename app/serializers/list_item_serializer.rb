@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: list_items
@@ -14,11 +12,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-class ListItem < ApplicationRecord
-  belongs_to :book
-  belongs_to :user
-
-  validates :book_id, presence: true
-  validates :user_id, presence: true
-  validates :rating, presence: true, numericality: { in: 1..5 }
+class ListItemSerializer
+  include FastJsonapi::ObjectSerializer
+  attributes :rating, :notes, :start_date, :finish_date
 end
