@@ -4,7 +4,7 @@ class Api::V1::BooksController < ApplicationController
   before_action :set_book, only: %i[show]
 
   def index
-    @list_array = ListItem.where(id: current_user.id).select(:book_id)
+    @list_array = ListItem.where(user_id: current_user.id).select(:book_id)
     @books = Book.where.not(id: @list_array)
 
     render json: @books
