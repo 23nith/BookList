@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
       get '/books' => 'books#index'
       post '/book' => 'books#show'
+      post '/search' => 'books#search'
       get '/current_user', to: 'current_user#index'
     end
   end
