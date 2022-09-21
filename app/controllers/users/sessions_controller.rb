@@ -13,17 +13,10 @@ module Users
     end
 
     def respond_to_on_destroy
-      if current_user
-        render json: {
-          status: 200,
-          message: 'logged out successfully'
-        }, status: :ok
-      else
-        render json: {
-          status: 401,
-          message: "Couldn't find an active session."
-        }, status: :unauthorized
-      end
+      render json: {
+        status: 200,
+        message: 'logged out successfully'
+      }, status: :ok
     end
     # before_action :configure_sign_in_params, only: [:create]
 
