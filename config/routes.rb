@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       get '/finished_books' => 'list_items#finished_books'
       post '/list_item' => 'list_items#show'
       post '/add_list_item' => 'list_items#create'
-      # post '/add_list_item' => 'list_items#add_list_item'
-      post '/edit_list_item' => 'list_items#update'
+      get '/list_item/:id/edit' => 'list_items#edit'
+      patch '/list_item/:id' => 'list_items#update'
+      
       delete '/list_item' => 'list_items#destroy'
 
       get '/books' => 'books#index'
