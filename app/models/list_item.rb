@@ -20,5 +20,5 @@ class ListItem < ApplicationRecord
 
   validates :book_id, presence: true
   validates :user_id, presence: true
-  validates :rating, presence: true, numericality: { in: 1..5 }
+  validates :rating, presence: true, numericality: { in: 0..5 }
 end
