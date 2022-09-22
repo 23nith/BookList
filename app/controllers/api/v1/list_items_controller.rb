@@ -32,7 +32,12 @@ class Api::V1::ListItemsController < ApplicationController
     end
   end
 
+  def edit
+    @list_item = ListItem.find(params[:id])
+  end
+
   def update
+    @list_item = ListItem.find(params[:id])
     if @list_item.update(list_item_params)
       render json: @list_item
     else
@@ -54,7 +59,6 @@ class Api::V1::ListItemsController < ApplicationController
   end
 
   def list_item_params
-    params.require(:list_item).permit(:id, :book_id, :user_id, :rating, :notes, :start_date, :finish_date,
-                                      :created_at, :updated_at)
+    params.require(:list_item).permit(:id, :book_id, :user_id, :rating, :notes, :start_date, :finish_date, :created_at, :updated_at)
   end
 end
