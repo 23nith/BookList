@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Most up to date branch is: fix_update_endpoint
 
-Things you may want to cover:
 
-* Ruby version
+How to run:
+* git clone -b fix_update_endpoint - -single-branch git@github.com:23nith/BookList.git
+* ./bin/rails db:prepare
+* ./bin/rails s
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
